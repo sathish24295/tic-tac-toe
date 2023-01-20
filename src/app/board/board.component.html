@@ -1,0 +1,24 @@
+<h2>Tic Tac Toe !!!</h2>
+
+<div class="gameCls">
+  <button
+    nbButton
+    outline
+    shape="round"
+    size="small"
+    status="info"
+    [disabled]="!isGameStarted"
+    (click)="startNewGame()"
+  >
+    New Game
+  </button>
+  <p *ngIf="!winner">Player {{ currentPlayer }}'s turn</p>
+  <p *ngIf="winner">Player {{ winner }} is the winner !!!</p>
+</div>
+<main>
+  <app-square
+    *ngFor="let val of values; let i = index"
+    [value]="val"
+    (click)="onSquareClick(i)"
+  ></app-square>
+</main>

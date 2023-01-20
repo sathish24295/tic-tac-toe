@@ -1,0 +1,22 @@
+main {
+  display: grid;
+  grid-template-columns: 160px 160px 160px;
+}
+
+app-square {
+  border: 1px solid grey;
+  height: 160px;
+}
+
+.gameCls {
+  display: flex;
+  margin: 8px 0 16px 0;
+}
+
+p {
+  margin: 4px 0px 0px 16px;
+}
+
+h2 {
+  margin: 0;
+}
