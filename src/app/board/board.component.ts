@@ -60,4 +60,8 @@ export class BoardComponent implements OnInit {
   get currentPlayer() {
     return this.isXNext ? 'X' : 'O';
   }
+
+  get styleExp() {
+    return this.currentPlayer == 'X' ? '#ff708d' : '#2ce69b';
+  }
 }

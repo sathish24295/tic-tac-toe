@@ -1,24 +1,25 @@
-<h2>Tic Tac Toe !!!</h2>
-
-<div class="gameCls">
-  <button
-    nbButton
-    outline
-    shape="round"
-    size="small"
-    status="info"
-    [disabled]="!isGameStarted"
-    (click)="startNewGame()"
-  >
-    New Game
-  </button>
-  <p *ngIf="!winner">Player {{ currentPlayer }}'s turn</p>
-  <p *ngIf="winner">Player {{ winner }} is the winner !!!</p>
+<h2 style="color: #c9edde;">Tic Tac Toe !!!</h2>
+<div class="mainCls">
+  <div class="gameCls">
+    <button
+      nbButton
+      outline
+      shape="round"
+      size="small"
+      status="info"
+      [disabled]="!isGameStarted"
+      (click)="startNewGame()"
+    >
+      New Game
+    </button>
+    <p [ngStyle]="{color : styleExp}" *ngIf="!winner">Player {{ currentPlayer }}'s turn</p>
+    <p style="color: #ff6600;" *ngIf="winner">Player {{ winner }} is the winner !!!</p>
+  </div>
+  <main>
+    <app-square
+      *ngFor="let val of values; let i = index"
+      [value]="val"
+      (click)="onSquareClick(i)"
+    ></app-square>
+  </main>
 </div>
-<main>
-  <app-square
-    *ngFor="let val of values; let i = index"
-    [value]="val"
-    (click)="onSquareClick(i)"
-  ></app-square>
-</main>
